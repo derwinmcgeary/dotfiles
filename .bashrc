@@ -80,6 +80,8 @@ fi
 #  Set various bash parameters based on whether the shell is 'interactive'
 #  or not.  An interactive shell is one you type commands into, a
 #  non-interactive one is the bash environment used in scripts.
+source ~/.git-prompt.sh
+
 if [ "$PS1" ]; then
 
     if [ -x /usr/bin/tput ]; then
@@ -162,7 +164,7 @@ shopt -s histappend
 
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
+PS1="\[\033[0;34m\][\u@\h:\w]\$(__git_ps1)$\[\033[0m\]"
 
 ## -----------------------
 ## -- 2) Set up aliases --
