@@ -38,7 +38,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit autoface-default :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "courier"))))
+ '(default ((t (:inherit autoface-default :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "unknown" :family "Courier Prime Code"))))
  '(column-marker-1 ((t (:background "red"))))
  '(diff-added ((t (:foreground "cyan"))))
  '(flymake-errline ((((class color) (background light)) (:background "Red"))))
