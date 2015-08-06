@@ -164,7 +164,7 @@ shopt -s histappend
 
 # Make prompt informative
 # See:  http://www.ukuug.org/events/linux2003/papers/bash_tips/
-PS1="\[\033[0;34m\][\u@\h:\w]\$(__git_ps1)$\[\033[0m\]"
+PS1="\[\033[0;34m\][\u@\h:\W]\$(__git_ps1)$\[\033[0m\]"
 
 ## -----------------------
 ## -- 2) Set up aliases --
