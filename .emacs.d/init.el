@@ -17,6 +17,10 @@
 (require 'dired-x)
 (require 'compile)
 (require 'ess-site)
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
 (ido-mode t)
 (menu-bar-mode -1)
 (normal-erase-is-backspace-mode 1)
@@ -76,3 +80,13 @@
 (require 'jade-mode)    
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+;; -------------------------
+;; -- polymode for R markdown
+;; -------------------------
+;; from http://stackoverflow.com/questions/16172345/how-can-i-use-emacs-ess-mode-with-r-markdown#16176115
+(defun rmd-mode ()
+  "ESS Markdown mode for rmd files"
+  (interactive)
+  (require 'poly-R)
+  (require 'poly-markdown)     
+  (poly-markdown+r-mode))
