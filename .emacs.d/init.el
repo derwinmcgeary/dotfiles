@@ -89,3 +89,26 @@
   (require 'poly-R)
   (require 'poly-markdown)     
   (poly-markdown+r-mode))
+;; ------------------------
+;; -- Wrap html tag -
+;; -----------------------
+(defun wrap-html-tag (tagName)
+  "Add a tag to beginning and ending of current word or text selection."
+  (interactive "sEnter tag name: ")
+  (let (p1 p2 inputText)
+    (if (use-region-p)
+        (progn
+          (setq p1 (region-beginning) )
+          (setq p2 (region-end) )
+          )
+      (let ((bds (bounds-of-thing-at-point 'symbol)))
+        (setq p1 (car bds) )
+        (setq p2 (cdr bds) ) ) )
+
+    (goto-char p2)
+    (insert "</" tagName ">")
+    (goto-char p1)
+    (insert "<" tagName ">")
+    ))
+(global-set-key (kbd "C-,") 'wrap-html-tag) ; ctrl-,
+(put 'narrow-to-region 'disabled nil)
